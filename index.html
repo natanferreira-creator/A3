@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Conexão Segura — Educação digital</title>
+  <meta name="description" content="Aprenda a identificar golpes virtuais, proteger dados pessoais e navegar com segurança.">
+
+  <!-- Fontes do Google (se você estiver sem internet, o navegador usa uma fonte padrão) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Bricolage+Grotesque:wght@700;800&display=swap" rel="stylesheet">
+
+  <!-- Arquivo de estilos (CSS) -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ========== CABEÇALHO ========== -->
+  <header class="cabecalho">
+    <div class="cabecalho-conteudo">
+      <a class="logo" href="#inicio">
+        <!-- Ícone de escudo desenhado com SVG -->
+        <svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12 2 4 5v6c0 5 3.4 9.3 8 11 4.6-1.7 8-6 8-11V5l-8-3Z" fill="#FFC93C"/>
+          <path d="m8.5 12 2.4 2.4L15.7 9.6" fill="none" stroke="#12214A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Conexão Segura
+      </a>
+      <nav aria-label="Menu principal">
+        <ul class="menu">
+          <li><a href="#quiz">Quiz</a></li>
+          <li><a href="#simulador">Simulador</a></li>
+          <li><a href="#senhas">Senhas</a></li>
+          <li><a href="#habitos">Hábitos</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ========== INÍCIO ========== -->
+    <section class="hero" id="inicio">
+      <div class="hero-texto">
+        <h1>Conexão Segura</h1>
+        <p class="subtitulo">
+          Aprenda a identificar golpes virtuais, proteger seus dados pessoais e navegar com segurança.
+        </p>
+        <div class="hero-botoes">
+          <a class="botao" href="#simulador">Testar o simulador</a>
+          <a class="botao botao-secundario" href="#quiz">Fazer o quiz</a>
+        </div>
+      </div>
+
+      <!-- Mensagem falsa de exemplo: a própria capa já ensina a primeira lição -->
+      <div class="celular">
+        <div class="tela">
+          <p class="remetente">Mensagem de número desconhecido</p>
+          <p class="balao">
+            Correios: sua encomenda está <span class="marca marca-urgencia">retida. Pague a taxa em até 24h</span>:
+            <span class="marca marca-link">correios-taxa.top/rastreio</span>
+          </p>
+        </div>
+        <ul class="legenda">
+          <li><span class="ponto ponto-urgencia"></span> Pressa para você agir sem pensar</li>
+          <li><span class="ponto ponto-link"></span> Endereço que não é dos Correios</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ========== QUIZ ========== -->
+    <section class="secao" id="quiz">
+      <h2>Quiz de segurança digital</h2>
+      <p class="intro">Oito perguntas rápidas. Depois de cada resposta, você vê a explicação.</p>
+      <!-- O JavaScript desenha as perguntas dentro desta div -->
+      <div class="painel" id="quiz-area"></div>
+    </section>
+
+    <!-- ========== SIMULADOR ========== -->
+    <section class="secao" id="simulador">
+      <h2>Simulador: golpe ou mensagem legítima?</h2>
+      <p class="intro">
+        Leia cada mensagem como se tivesse acabado de recebê-la e decida. Em seguida, veja os sinais que entregam o golpe.
+      </p>
+      <!-- O JavaScript desenha as mensagens dentro desta div -->
+      <div class="painel" id="simulador-area"></div>
+    </section>
+
+    <!-- ========== SENHAS ========== -->
+    <section class="secao" id="senhas">
+      <h2>Proteção de senhas</h2>
+      <p class="intro">Teste como uma senha se sai nos critérios básicos e veja as dicas que mais fazem diferença.</p>
+
+      <div class="senhas-grade">
+
+        <!-- Verificador de senha -->
+        <div class="painel">
+          <h3>Verificador de senha</h3>
+          <label for="campo-senha">Digite uma senha para testar</label>
+          <input type="password" id="campo-senha" autocomplete="off" spellcheck="false">
+
+          <label class="mostrar">
+            <input type="checkbox" id="mostrar-senha"> Mostrar o que estou digitando
+          </label>
+
+          <div class="medidor" id="medidor" aria-hidden="true">
+            <div class="medidor-preenchido" id="medidor-preenchido"></div>
+          </div>
+          <p class="nivel" id="nivel-texto" aria-live="polite">Digite para testar</p>
+
+          <ul class="regras">
+            <li id="regra-tamanho">Pelo menos 12 caracteres</li>
+            <li id="regra-minuscula">Uma letra minúscula</li>
+            <li id="regra-maiuscula">Uma letra maiúscula</li>
+            <li id="regra-numero">Um número</li>
+            <li id="regra-simbolo">Um símbolo (como ! ? # @)</li>
+          </ul>
+          <p class="aviso" id="senha-aviso"></p>
+          <p class="nota">O que você digita fica só no seu navegador, mas não use suas senhas reais para testar.</p>
+        </div>
+
+        <!-- Dicas -->
+        <ul class="dicas">
+          <li>
+            <strong>Prefira frases longas</strong>
+            Quatro ou mais palavras sem relação entre si são fáceis de lembrar e difíceis de adivinhar.
+          </li>
+          <li>
+            <strong>Uma senha para cada conta</strong>
+            Se um site vazar sua senha, criminosos testam a mesma senha em e-mail, banco e redes sociais.
+          </li>
+          <li>
+            <strong>Use um gerenciador de senhas</strong>
+            Ele cria e guarda senhas diferentes para tudo. Você só precisa lembrar de uma senha mestra.
+          </li>
+          <li>
+            <strong>Ative a verificação em duas etapas</strong>
+            Mesmo que descubram sua senha, ainda precisam do código do seu celular ou aplicativo.
+          </li>
+          <li>
+            <strong>Evite dados pessoais</strong>
+            Nome, data de nascimento, time e nome de pet são as primeiras coisas que alguém tenta.
+          </li>
+          <li>
+            <strong>Nunca passe senhas ou códigos</strong>
+            Nenhum banco ou empresa pede sua senha ou o código recebido por SMS, nem por telefone.
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ========== HÁBITOS ========== -->
+    <section class="secao" id="habitos">
+      <h2>Hábitos para navegar com segurança</h2>
+      <div class="habitos">
+        <div>
+          <h3>Confira o endereço antes de clicar</h3>
+          <p>Golpistas trocam letras, usam terminações estranhas (.top, .click) ou colocam o nome da marca no meio do endereço.</p>
+        </div>
+        <div>
+          <h3>Desconfie de pressa e de prêmios</h3>
+          <p>“Última chance”, “conta bloqueada hoje” e “você ganhou” servem para você agir antes de pensar.</p>
+        </div>
+        <div>
+          <h3>Cuidado com Wi-Fi público</h3>
+          <p>Evite acessar banco ou digitar senhas em redes abertas. Prefira os dados móveis.</p>
+        </div>
+        <div>
+          <h3>Mantenha tudo atualizado</h3>
+          <p>Atualizações do celular, do navegador e dos aplicativos corrigem falhas que golpistas exploram.</p>
+        </div>
+        <div>
+          <h3>Compartilhe o mínimo de dados</h3>
+          <p>CPF, endereço e fotos de documentos só devem ir para quem realmente precisa deles.</p>
+        </div>
+        <div>
+          <h3>Caiu em um golpe? Aja rápido</h3>
+          <p>Avise o banco pelo canal oficial, troque as senhas e registre um boletim de ocorrência.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========== RODAPÉ ========== -->
+  <footer class="rodape">
+    <p>Conexão Segura — Educação digital · <span id="ano"></span></p>
+    <p>Projeto educativo. As mensagens do simulador são fictícias.</p>
+  </footer>
+
+  <!-- Arquivo de JavaScript (fica no fim para a página carregar primeiro) -->
+  <script src="script.js"></script>
+</body>
+</html>
